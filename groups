@@ -1,0 +1,4 @@
+# UUID                                                                        	Group Name
+#
+ldap:cn=hyperledger-gerrit-fabric-committers,ou=Groups,dc=freestandards,dc=org	ldap/hyperledger-gerrit-fabric-committers
+ldap:cn=hyperledger-gerrit-fabric-chaintool-committers,ou=Groups,dc=freestandards,dc=org	ldap/hyperledger-gerrit-fabric-chaintool-committers
