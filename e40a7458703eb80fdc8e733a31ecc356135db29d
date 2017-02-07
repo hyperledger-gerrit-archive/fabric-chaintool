@@ -1,0 +1,9 @@
+Verified+1: Hyperledger Jobbuilder <jobbuilder@jenkins.hyperledger.org>
+Code-Review+2: Eric Baur <ecb@robeybaur.org>
+Verified+1: Eric Baur <ecb@robeybaur.org>
+Code-Review+2: Christopher Ferris <chris.ferris@gmail.com>
+Submitted-by: Christopher Ferris <chris.ferris@gmail.com>
+Submitted-at: Tue, 07 Feb 2017 19:49:33 +0000
+Reviewed-on: http://gerrit.hyperledger.org/r/5593
+Project: fabric-chaintool
+Branch: refs/heads/master
