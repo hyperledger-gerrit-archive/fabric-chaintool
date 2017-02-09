@@ -1,32 +1,12 @@
-sum_list([], 0).
-
-sum_list([2 | Rest], Sum) :-
-  sum_list(Rest,Tmp), Sum is 2 + Tmp, !.
-
-sum_list([_|Rest], Sum) :-
-  sum_list(Rest, Sum).
-
-first_list([], _).
-first_list([F], F).
-first_list([F | Rest], F).
-
-score(Category, Score, User) :-
-  gerrit:commit_label(label(Category, Score), User).
-
-add_category_min_score(In, Category, Min,  P) :-
-  findall(Score, score(Category, Score, User), Scores),
-  findall(User, score(Category, Score, User), Users),
-  sum_list(Scores, Sum),
-  Sum >= Min, !,
-  first_list(Users, FirstUser),
-  P = [label(Category, ok(FirstUser)) | In].
-
-add_category_min_score(In, Category, Min, P) :-
-  P = [label(Category, need(Min)) | In].
-
 submit_rule(S) :-
-  gerrit:default_submit(X),
-  X =.. [submit | Ls],
-  gerrit:remove_label(Ls, label('Code-Review', _), NoCR),
-  add_category_min_score(NoCR, 'Code-Review', 4, Labels),
-  S =.. [submit | Labels].
+    gerrit:default_submit(X),
+    X =.. [submit | Ls],
+    add_non_author_approval(Ls, R),
+    S =.. [submit | R].
+
+add_non_author_approval(S1, S2) :-
+    gerrit:commit_author(A),
+    gerrit:commit_label(label('Code-Review', 2), R),
+    R \= A, !,
+    S2 = [label('Non-Author-Code-Review', ok(R)) | S1].
+add_non_author_approval(S1, [label('Non-Author-Code-Review', need(_)) | S1]).
