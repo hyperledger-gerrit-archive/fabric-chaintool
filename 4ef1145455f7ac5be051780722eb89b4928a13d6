@@ -1,0 +1,8 @@
+Verified+1: Hyperledger Jobbuilder <jobbuilder@jenkins.hyperledger.org>
+Code-Review+2: Artem Barger <bartem@il.ibm.com>
+Code-Review+2: Greg Haskins <gregory.haskins@gmail.com>
+Submitted-by: Greg Haskins <gregory.haskins@gmail.com>
+Submitted-at: Fri, 02 Jun 2017 15:42:16 +0000
+Reviewed-on: http://gerrit.hyperledger.org/r/10047
+Project: fabric-chaintool
+Branch: refs/heads/master
