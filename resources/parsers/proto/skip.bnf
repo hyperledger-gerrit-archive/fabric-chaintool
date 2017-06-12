@@ -1,13 +1,11 @@
-
+#
+# Copyright Greg Haskins All Rights Reserved
+#
+# SPDX-License-Identifier: Apache-2.0
+#
 skipper ::= (whitespace | blankline | ( wlcomment / comment))*
 
 whitespace ::= #"[ \t]"
 blankline ::= #"^\n"
 wlcomment ::= #'^' comment '\n'
 comment ::= ('//' | '#') (!'\n' #'.')*
-
-
-
-
-
-
