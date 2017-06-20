@@ -1,0 +1,8 @@
+Verified+1: Hyperledger Jobbuilder <jobbuilder@jenkins.hyperledger.org>
+Code-Review+2: Kostas Christidis <kostas@gmail.com>
+Code-Review+2: David Enyeart <enyeart@us.ibm.com>
+Submitted-by: David Enyeart <enyeart@us.ibm.com>
+Submitted-at: Tue, 20 Jun 2017 01:44:52 +0000
+Reviewed-on: https://gerrit.hyperledger.org/r/10679
+Project: fabric-chaintool
+Branch: refs/heads/master
