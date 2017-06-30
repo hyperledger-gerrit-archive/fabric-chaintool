@@ -64,7 +64,8 @@
 
 (defn getattrs [ast]
   (let [{:keys [type] :as attrs} (get-raw-attrs ast)
-        [subType typeName] type]
+        subType (first type)
+        typeName (if (not= subType :map) (second type) :test)]
     ;; sythesize the subType/typeName fields
     (merge attrs {:subType subType :typeName typeName})))
 
@@ -213,7 +214,8 @@
   (let [{:keys [subType]} (getattrs ast)]
     (case subType
       :userType (verify-usertype ast)
-      :scalar [ast nil])))
+      :scalar [ast nil]
+      :map [ast nil])))
 
 ;;-----------------------------------------------------------------
 ;; check-index-default: ensures our default index is 0
