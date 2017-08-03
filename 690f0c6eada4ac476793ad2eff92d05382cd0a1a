@@ -1,0 +1,8 @@
+Code-Review+2: Srinivasan Muralidharan <muralisr@us.ibm.com>
+Verified+1: Srinivasan Muralidharan <muralisr@us.ibm.com>
+Verified+1: Hyperledger Jobbuilder <jobbuilder@jenkins.hyperledger.org>
+Submitted-by: Greg Haskins <gregory.haskins@gmail.com>
+Submitted-at: Thu, 03 Aug 2017 19:44:39 +0000
+Reviewed-on: https://gerrit.hyperledger.org/r/12129
+Project: fabric-chaintool
+Branch: refs/heads/master
