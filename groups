@@ -1,5 +1,6 @@
-# UUID                                                                                  	Group Name
+# UUID                                                                                            	Group Name
 #
-ef1fe8d82339cf63038bbcf163cc2539eabce3c5                                                	GitHub Replication
-ldap:cn=hyperledger-gerrit-fabric-chaintool-committers,ou=Groups,dc=freestandards,dc=org	ldap/hyperledger-gerrit-fabric-chaintool-committers
-ldap:cn=hyperledger-gerrit-fabric-committers,ou=Groups,dc=freestandards,dc=org          	ldap/hyperledger-gerrit-fabric-committers
+ef1fe8d82339cf63038bbcf163cc2539eabce3c5                                                          	GitHub Replication
+ldap:cn=hyperledger-gerrit-fabric-chaintool-committers,ou=Groups,dc=freestandards,dc=org          	ldap/hyperledger-gerrit-fabric-chaintool-committers
+ldap:cn=hyperledger-gerrit-fabric-committers,ou=Groups,dc=freestandards,dc=org                    	ldap/hyperledger-gerrit-fabric-committers
+ldap:cn=hyperledger-gerrit-fabric-release-maintainers-committers,ou=Groups,dc=freestandards,dc=org	ldap/hyperledger-gerrit-fabric-release-maintainers-committers
