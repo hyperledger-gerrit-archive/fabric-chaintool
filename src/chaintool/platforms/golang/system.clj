@@ -17,13 +17,15 @@
             [chaintool.platforms.golang.core :refer :all]
             [chaintool.util :as util]
             [clojure.java.io :as io]
+            [clojure.java.shell :refer [sh]]
             [clojure.string :as string]
             [clojure.tools.file-utils :as fileutils])
   (:refer-clojure :exclude [compile]))
 
 (defn get-package-name [path]
-  ;; FIXME: This will only work when chaintool is in CWD, need to "cd $path" first
-  (string/trim-newline (go "list")))
+  (-> (sh "go" "list" :dir path)
+      :out
+      string/trim-newline))
 
 (defn subtract-paths [fqpath relpath]
   (->> (string/replace (str fqpath) relpath "") io/file .getCanonicalPath str))
