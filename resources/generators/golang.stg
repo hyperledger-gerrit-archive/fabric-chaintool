@@ -28,7 +28,8 @@ type Interfaces map[string]interface{}
 type Dispatchers map[string]api.Dispatcher
 
 type stubHandler struct {
-     dispatchers Dispatchers
+    initDispatcher api.Dispatcher
+    dispatchers Dispatchers
 }
 
 var functionspec = regexp.MustCompile("([a-zA-Z0-9.]*)/fcn/([0-9]*)")
@@ -48,9 +49,9 @@ func (self *stubHandler) Init(stub shim.ChaincodeStubInterface) pb.Response {
                return shim.Error("Function must be \"init\"")
         }
 
-        dispatcher, ok := self.dispatchers["appinit"]
-        if !ok {
-               return shim.Error("Interface not found")
+       dispatcher := self.initDispatcher
+       if !dispatcher {
+               return shim.Error("Init interface not found: Please define \"appinit\"")
         }
 
         return dispatcher.Dispatch(stub, 1, args[1])
@@ -116,14 +117,17 @@ func New(interfaces Interfaces) (shim.Chaincode, error) {
 		return nil, err
        }
 
-       // Install all of the declared interfaces
-       for name, intf := range interfaces {
-           if err := handler.addDispatcher(name, intf); err != nil {
-              return nil, err
-           }
-       }
-
-       return handler, nil
+	// Install all of the declared interfaces
+	for name, intf := range interfaces {
+		switch name {
+		case "appinit":
+			handler.initDispatcher = intf
+		default:
+			if err := handler.addDispatcher(name, intf); err != nil {
+				return nil, err
+			}
+		}
+	}
 }
 
 <if(!system)>
