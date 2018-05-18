@@ -22,7 +22,7 @@
 
 (defn getoutputfile [options input name]
   (if-let [output (:output options)]
-    (io/file (if (str/ends-with? output "/") (str output name ".proto") (str output "/" name ".proto")))
+    (io/file (str output (when-not (str/ends-with? output "/") "/") name ".proto"))
     (io/file (str name ".proto"))))
 
 (defn run [options args]
