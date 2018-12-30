@@ -1,0 +1,7 @@
+Verified+1: Hyperledger Jobbuilder <jobbuilder@jenkins.hyperledger.org>
+Code-Review+2: Yacov Manevich <yacovm@il.ibm.com>
+Submitted-by: Yacov Manevich <yacovm@il.ibm.com>
+Submitted-at: Sun, 30 Dec 2018 10:19:53 +0000
+Reviewed-on: https://gerrit.hyperledger.org/r/28419
+Project: fabric-chaintool
+Branch: refs/heads/master
